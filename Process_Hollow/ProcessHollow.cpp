@@ -13,9 +13,9 @@ int main() {
 
 	// Create Benign process to hollow
 	// dwCreationFlags: (CREATE_SUSPENDED = 0x4)
-	if (!CreateProcessA(
+	if (CreateProcessA(
 		(LPSTR)"C:\\Windows\\System32\\calc.exe", NULL, NULL, NULL, TRUE, 0x4, NULL,
-		NULL, dest_si, dest_pi))
+		NULL, dest_si, dest_pi) == 0)
 	{
 		cout << "[-] Failed to create target process to hollow!!\n";
 		return 1;
