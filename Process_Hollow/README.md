@@ -11,14 +11,14 @@
 - This lab I used `Window API`, Visual Studio and `x86`.
 - First, I created a benign process `calc.exe` using the `CreateProcessA()` with the `CREATE_SUSPENDED` flag to make this process in the suspended state, and create a malicious file `MessageBox.exe` with `CreateFileA()` to inject the code to the target process.
 
-<center> <img src="![ProExplorer1](https://github.com/user-attachments/assets/02dfaa76-2025-4ee7-826c-74382d12545e)"></center>
+![ProExplorer1](https://github.com/user-attachments/assets/02dfaa76-2025-4ee7-826c-74382d12545e)
 
 
 - Next, we will write the malicious to the memory. But before doing that, we need to know the size of the malicious file, `GetFileSize()` can handle that. After getting the size, using `VirtualAlloc()` to allocate in the memory. The `VirtualAlloc()` will return the value of `EAX` register, which is the allocated address. Looking 2 images below, the first image is the address that allocated and saved in `EAX` register, the second image is the base address(`0x190000`) in the allocated memory that has `0x00` value after calling `VirtualAlloc()`.
 
 <div style="text-align: center;">
   
-![VirtualAlloc_Reg](https://github.com/user-attachments/assets/2ca4960b-7165-4604-a2f1-12d96c94e186)
+  ![VirtualAlloc_Reg](https://github.com/user-attachments/assets/2ca4960b-7165-4604-a2f1-12d96c94e186)
 
 </div>
 
