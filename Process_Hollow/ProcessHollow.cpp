@@ -23,7 +23,7 @@ int main() {
 
 	// Create a handle to a Maicious program file that will run inside the target process
 	HANDLE hMalPro = CreateFileA(
-		(LPCSTR)"C:\\Users\\DuongLucky\\Desktop\\MessageBox\\Debug\\MessageBox.exe",
+		(LPCSTR)"MessageBox.exe",
 		GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, NULL, NULL);
 
 	if (hMalPro == INVALID_HANDLE_VALUE)
