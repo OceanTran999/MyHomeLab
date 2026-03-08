@@ -20,4 +20,4 @@ docker run -d -p <host_port:container_port> --name <container_name> <image_name>
 
 + After running successfully. Connect to the app with http://localhost:port or http://ip_host:port_host
 
-<img width="420" height="650" alt="weather-demo" src="https://github.com/user-attachments/assets/33ed907b-bc1d-46e9-ae89-2b509a49b969" />
+<img width="728" height="974" alt="weather-demo" src="https://github.com/user-attachments/assets/e077b91f-4bcd-46f7-909e-ff168806a873" />
