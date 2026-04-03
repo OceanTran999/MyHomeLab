@@ -23,7 +23,7 @@ async function give_details(city_name) {
 
     if(data.cod == 200){
         // wea_info.style.display = 'inline';
-        cityName.innerHTML = "City name: " + data.name;
+        cityName.innerHTML = "City name: " + inputTxt.value;
 
         // "Weather" is an Array
         weather.innerHTML = "Weather: " + data.weather[0].main;
@@ -53,7 +53,7 @@ async function give_details(city_name) {
     }
     else{
         // Handle with invalid city
-        cityName.innerHTML = data.message;
+        cityName.innerHTML = "Can't find " + inputTxt.value;
         weather.innerHTML = '';
         weatDesc.innerHTML = '';
         temper.innerHTML = '';
