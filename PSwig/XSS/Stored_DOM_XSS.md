@@ -1,0 +1,1 @@
+In `loadCommentsWithVulnerableEscapeHtml.js` file, they also replace the `>` and `<` to avoid inject Javascript with `<script>` tag. However, the `replace()` only **replace the first character that it found** and change it into new one, so we just use the `<` and `>` more than 1 time to inject the JS code.
