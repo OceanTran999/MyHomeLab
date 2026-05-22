@@ -1,0 +1,1 @@
+The `window.location.search` is a string containing a `?` followed by the parameters of the location's URL. And the name of the parameter here is `storeId`, so to exploit, add the `&storeId=<script>alert()></script>` in the URL.
