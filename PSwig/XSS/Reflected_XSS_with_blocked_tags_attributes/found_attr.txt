@@ -1,0 +1,4 @@
+onoffline
+ononline
+onresize
+onstorage

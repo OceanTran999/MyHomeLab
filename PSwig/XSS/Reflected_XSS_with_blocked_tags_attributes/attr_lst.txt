@@ -1,0 +1,16 @@
+onafterprint
+onbeforeprint
+onbeforeunload
+onerror
+onhashchange
+onload
+onoffline
+ononline
+onpagehide
+onpageshow
+onpopstate
+onresize
+onshow
+ontoggle
+onstorage
+onunload
