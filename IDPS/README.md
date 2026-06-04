@@ -14,3 +14,4 @@ Problems:
 
 Attack Scenario:
 
+<img width="1491" height="792" alt="IDPS_Proj drawio" src="https://github.com/user-attachments/assets/69d20815-e268-4c4e-9d45-d6e344a7c5b2" />
