@@ -1,0 +1,57 @@
+services:
+  # attacker:
+  #   build: ./attacker
+  #   image: kali_image
+  #   container_name: attacker-container
+  #   tty: true
+  #   networks:
+  #     ipvlan_l2:
+  #       ipv4_address: 10.0.9.5
+  snort_ids:
+    image: ciscotalos/snort3:latest
+    container_name: snort_container
+    tty: true
+    networks:
+      macvlan_l3:
+        ipv4_address: 10.0.9.3
+
+  victim_dvwa:
+    image: vulnerables/web-dvwa
+    container_name: dvwa_container
+    ports:
+      - 80:80
+    restart: unless-stopped
+    networks:
+      macvlan_l3:
+        ipv4_address: 10.0.9.4
+
+  # victim_bwapp:
+  #   image: hackersploit/bwapp-docker
+  #   container_name: bwapp_container
+  #   ports:
+  #     - 999:99
+  #   restart: unless-stopped
+  #   networks:
+  #     ipvlan_l2:
+  #       ipv4_address: 10.0.9.5
+  
+  # suricata_ids:
+  #   image: jasonish/suricata:latest
+  #   container_name: suricata_container
+  #   tty: true
+  #   networks:
+  #     ipvlan_l2:
+  #       ipv4_address: 10.0.9.3
+
+networks:
+  macvlan_l3:
+    name: my_macvlan_l3
+    driver: macvlan
+    driver_opts:
+      parent: ens33
+      macvlan_mode: bridge
+    ipam:
+      config:
+        - subnet: 10.0.9.0/24
+          ip_range: 10.0.9.16/28
+          gateway: 10.0.9.1
