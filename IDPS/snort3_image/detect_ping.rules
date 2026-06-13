@@ -1,0 +1,7 @@
+alert icmp $EXTERNAL_NET any -> $TARGET_NET any
+(
+    msg:"Suspicious ping from Windows machine";
+    itype:8;
+    icode:0;
+    content:"abcdefghijklmnopqrstuvwabcdefghi"
+)
