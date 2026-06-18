@@ -17,12 +17,12 @@ This project is to learn 2 common IDSs/IPSs called [Snort](https://www.snort.org
 
 ## Draft Attack Scenario:
 
-<img width="1491" height="792" alt="IDPS_Proj drawio" src="https://github.com/u>
+<img width="1491" height="792" alt="IDPS_Proj drawio" src="https://github.com/user-attachments/assets/931c1fb6-9297-434f-b2bc-1b3172b49932" />
 
 
 ## Updated Attack Scenario:
 
-<img width="522" height="901" alt="IDPS_Proj_2 drawio" src="https://github.com/>
+<img width="522" height="901" alt="IDPS_Proj_2 drawio" src="https://github.com/user-attachments/assets/7c740ae3-8f0f-4f64-9580-12e87b961c90" />
 
 
 ## Running Snort3 with this command:
