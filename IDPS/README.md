@@ -1,10 +1,10 @@
 # Project
 This project is to learn 2 common IDSs/IPSs called [Snort](https://www.snort.org/) and [Suricata](https://www.snort.org/)
 
-## Environment:
+## Environment (Updated):
 - Ubuntu 22.04 LTS
-    - Using Docker with 4 containers: 
-        - Snort, Suricata: Passive Intrusion Detection Systems (IDSs)
+    - Snort, Suricata: Installed in Host Machine and set up Inline mode to anal>
+    - Using Docker with 2 containers:
         - Victim 1: Using DVWA App
         - Victim 2: Using BWAPP
 - Kali Linux: Attacker
@@ -15,9 +15,14 @@ This project is to learn 2 common IDSs/IPSs called [Snort](https://www.snort.org
 - To enable `promiscuous mode` in Docker Container I must set `privileged: true` in `Docker Compose`
 - And after wasting of my time to try run Snort3 Container, I realize that I should run Snort in the Host Machine instead of running it as Container LOL XD. Since I understood that it is necessary to use Network TAP or SPAN Port so that the Passive IDS can receive and analyze the copied packets.
 
-## Attack Scenario:
+## Draft Attack Scenario:
 
-<img width="1491" height="792" alt="IDPS_Proj drawio" src="https://github.com/user-attachments/assets/69d20815-e268-4c4e-9d45-d6e344a7c5b2" />
+<img width="1491" height="792" alt="IDPS_Proj drawio" src="https://github.com/u>
+
+
+## Updated Attack Scenario:
+
+<img width="522" height="901" alt="IDPS_Proj_2 drawio" src="https://github.com/>
 
 
 ## Running Snort3 with this command:
