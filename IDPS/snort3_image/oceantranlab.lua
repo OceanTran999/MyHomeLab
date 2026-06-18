@@ -1,9 +1,11 @@
 EXTERNAL_NET = 'any'
-TARGET_NET = '10.0.9.4'
+TARGET_NET = {"10.0.9.2/24", "10.0.9.3/24"}
 
 ips = 
 {
-    rules = '/home/snorty/snort3/etc/rules/detect_ping.rules',
+    rules = [[
+        include /usr/local/etc/rules/detect_ping.rules
+    ]],
     variables =
     {
         nets = {
@@ -12,3 +14,6 @@ ips =
         }
     }
 }
+
+alert_csv = {file = true}
+alert_json = {file = true}

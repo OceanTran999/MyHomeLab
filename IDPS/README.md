@@ -3,8 +3,8 @@ This project is to learn 2 common IDSs/IPSs called [Snort](https://www.snort.org
 
 ## Environment:
 - Ubuntu 22.04 LTS
-    - Snort, Suricata: Installed in Host Machine and set up Inline mode to analyze network packets sent to Docker Containers.
-    - Using Docker with 2 containers:
+    - Using Docker with 4 containers: 
+        - Snort, Suricata: Passive Intrusion Detection Systems (IDSs)
         - Victim 1: Using DVWA App
         - Victim 2: Using BWAPP
 - Kali Linux: Attacker
@@ -15,20 +15,21 @@ This project is to learn 2 common IDSs/IPSs called [Snort](https://www.snort.org
 - To enable `promiscuous mode` in Docker Container I must set `privileged: true` in `Docker Compose`
 - And after wasting of my time to try run Snort3 Container, I realize that I should run Snort in the Host Machine instead of running it as Container LOL XD. Since I understood that it is necessary to use Network TAP or SPAN Port so that the Passive IDS can receive and analyze the copied packets.
 
-## Draft Attack Scenario:
+## Attack Scenario:
 
 <img width="1491" height="792" alt="IDPS_Proj drawio" src="https://github.com/user-attachments/assets/69d20815-e268-4c4e-9d45-d6e344a7c5b2" />
 
 
-## Updated Attack Scenario:
-
-<img width="522" height="901" alt="IDPS_Proj_2 drawio" src="https://github.com/user-attachments/assets/608be343-9d21-447f-a3b6-7e151f1549a4" />
-
-
 ## Running Snort3 with this command:
 ### For saving logs into JSON files
+- Snort3 Container
 ```
     /home/snorty/snort3/bin/snort -c /home/snorty/snort3/etc/snort/oceantranlab.lua -i eth0 -A alert_json --lua "alert_json = {file = true}"
+```
+
+- Snort Command:
+```
+    sudo snort -i ens33 -c snort/oceantranlab.lua -A alert_csv -l <place to save log files>
 ```
 
 ### For saving logger outputs event information
