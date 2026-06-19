@@ -1,1 +1,2 @@
-alert icmp $EXTERNAL_NET any -> $TARGET_NET any ( msg:"Suspicious ping from Windows machine"; itype:8; icode:0; content:"abcdefghijklmnopqrstuvwabcdefghi"; )
+alert icmp $EXTERNAL_NET any -> $TARGET_NET any ( msg:"Suspicious ping from Windows machine"; itype:8; icode:0; content:"abcdefghijklmnopqrstuvwabcdefghi"; sid:1; rev:1; )
+alert icmp $EXTERNAL_NET any -> $TARGET_NET any ( msg:"Suspicious ping from Kali Linux machine"; itype:8; icode:0; content:"()*+,-./01234567", offset 32; sid:2; rev:4; )
