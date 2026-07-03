@@ -3,7 +3,7 @@ This project is to learn 2 common IDSs/IPSs called [Snort](https://www.snort.org
 
 ## Environment (Updated):
 - Ubuntu 22.04 LTS
-    - Snort, Suricata: Installed in Host Machine and set up Inline mode to anal>
+    - Snort, Suricata: Installed in Host Machine and set up Inline mode to analyze the network traffic.
     - Using Docker with 2 containers:
         - Victim 1: Using DVWA App
         - Victim 2: Using BWAPP
