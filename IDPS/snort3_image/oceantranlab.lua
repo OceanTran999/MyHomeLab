@@ -5,6 +5,8 @@ ips =
 {
     rules = [[
         include /usr/local/etc/rules/detect_ping.rules
+        include /usr/local/etc/rules/port_scan.rules
+        include /usr/local/etc/rules/os_detection_scan.rules
     ]],
     variables =
     {

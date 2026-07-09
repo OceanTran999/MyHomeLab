@@ -1,0 +1,1 @@
+alert tcp $EXTERNAL_NET any -> $TARGET_NET any ( msg: "Suspicious TCP SYN Scan from attacker to target"; fragoffset:0; flags:S; window:1024; detection_filter: track by_src, count 9, seconds 2; sid:3; rev:1; )
